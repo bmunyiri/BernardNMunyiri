@@ -8648,10 +8648,12 @@ input, select, textarea {
   }
 	.intro {
   max-width: 680px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 0;
+  margin: 2.5rem auto 0;
+  padding: 0 1.5rem;
+  text-align: center;
   font-size: 1.05rem;
   line-height: 1.7;
   color: #444;
+  background: transparent;   /* kill any inherited ribbon */
 }
 }
