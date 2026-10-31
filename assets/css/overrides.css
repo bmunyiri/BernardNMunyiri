@@ -129,113 +129,82 @@
   color: #555;
   white-space: nowrap;
 }
-
 /* =========================================================
-   HEADER & INTRO (GLOBAL)
+   HEADER & INTRO (BULLETPROOF OVERRIDES)
    ========================================================= */
 .page-header {
-  background: #f8f8fb;
-  color: #1f1f2e;
-  padding: 4rem 1.5rem 3rem;
-  text-align: center;
+  background: #f8f8fb !important;
+  color: #1f1f2e !important;
+  padding: 5rem 1.5rem 4rem !important; /* Gives the top some breathing room */
   border-bottom: 1px solid #e8e8ef;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Forces all child elements to center */
+}
+
+/* Force ALL text inside the header to be centered */
+.page-header h1,
+.page-header p,
+.page-header .intro,
+.page-header .eyebrow {
+  text-align: center !important;
 }
 
 .page-header h1 {
-  font-size: 2.75rem;
-  margin: 0 0 0.5rem;
-  font-weight: 700;
+  font-size: 3rem !important;
+  margin: 0 0 0.5rem !important;
+  font-weight: 700 !important; /* Makes the name bolder and more visible */
+  color: #1f1f2e !important;
 }
 
 .page-header .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  font-size: 0.75rem;
-  color: #4c8bf5;
-  font-weight: 600;
-  margin: 0 0 1rem;
+  font-size: 0.8rem !important;
+  color: #4c8bf5 !important; /* Blue accent color */
+  font-weight: 700 !important;
+  margin: 0 0 1rem !important;
 }
 
 .page-header .subtitle {
-  font-size: 1.1rem;
-  color: #666;
+  font-size: 1.15rem !important;
+  color: #555 !important;
   max-width: 600px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 2rem !important;
+  line-height: 1.6;
 }
 
 /* ===== The Intro Paragraph ===== */
-.intro {
+.page-header .intro {
   max-width: 680px;
-  margin: 0 auto 2.5rem;
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #444;
-}
-
-.intro p {
-  margin: 0;
+  margin: 0 auto 2.5rem !important;
+  font-size: 1.05rem !important;
+  line-height: 1.8 !important;
+  color: #444 !important;
+  display: block; /* Ensures block-level centering */
 }
 
 /* ===== Navigation Buttons ===== */
-.header-nav {
-  display: flex;
+.page-header .header-nav {
+  background: transparent !important; /* Kills the dark ribbon */
+  box-shadow: none !important;
+  display: flex !important;
+  justify-content: center !important;
   gap: 1rem;
-  justify-content: center;
   flex-wrap: wrap;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.header-nav.sticky-nav {
-  position: static;
-  background: transparent;
-  backdrop-filter: none;
-  padding: 0;
+/* Style the buttons so they look clean on the light background */
+.page-header .header-nav .button {
+  background: #fff !important;
+  border: 1px solid #ccc !important;
+  color: #1f1f2e !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
 }
 
-/* =========================================================
-   RESPONSIVE — collapse gaps on small screens
-   ========================================================= */
-@media (max-width: 980px) {
-  :root {
-    --section-gap: 2rem;
-    --spotlight-pad-y: 2.25rem;
-    --spotlight-pad-x: 1.5rem;
-  }
-  .spotlight {
-    gap: 1.5rem;
-  }
-  .spotlight.style1 > .content {
-    padding: 0.5rem 0 1rem;
-  }
-}
-
-@media (max-width: 736px) {
-  :root {
-    --section-gap: 1.5rem;
-    --spotlight-pad-y: 1.75rem;
-  }
-  .section-heading {
-    padding: 2.25rem 1.25rem 0.25rem;
-  }
-  .spotlight.style1 > .content {
-    padding: 0 0 1.25rem;
-  }
-  #skills .items > section {
-    padding: 1.25rem 1rem;
-  }
-  
-  /* Mobile Header Adjustments (Now properly nested) */
-  .page-header {
-    padding: 3rem 1.25rem 2rem;
-  }
-  .page-header h1 {
-    font-size: 2rem;
-  }
-  .header-nav {
-    flex-direction: column;
-    align-items: center;
-  }
-  .header-nav .button {
-    width: 100%;
-    max-width: 280px;
-  }
+.page-header .header-nav .button:hover {
+  border-color: #4c8bf5 !important;
+  color: #4c8bf5 !important;
 }
