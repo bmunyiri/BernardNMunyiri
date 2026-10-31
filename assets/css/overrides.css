@@ -158,4 +158,81 @@
   color: #555;
   white-space: nowrap;
 }
+   /* ===== Header & Intro ===== */
+.page-header {
+  background: #f8f8fb; /* Light, clean background instead of dark */
+  color: #1f1f2e;
+  padding: 4rem 1.5rem 3rem;
+  text-align: center; /* Forces everything inside to center */
+  border-bottom: 1px solid #e8e8ef;
+}
+
+.page-header h1 {
+  font-size: 2.75rem;
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.page-header .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  color: #4c8bf5; /* A nice pop of color for the job title */
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+
+.page-header .subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+/* ===== The Intro Paragraph ===== */
+.intro {
+  max-width: 680px;
+  margin: 0 auto 2.5rem; /* Centers the block and gives space below */
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.intro p {
+  margin: 0;
+}
+
+/* ===== Navigation Buttons ===== */
+.header-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Remove the sticky dark bar effect from before */
+.header-nav.sticky-nav {
+  position: static;
+  background: transparent;
+  backdrop-filter: none;
+  padding: 0;
+}
+
+/* Ensure mobile still looks good */
+@media (max-width: 736px) {
+  .page-header {
+    padding: 3rem 1.25rem 2rem;
+  }
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  .header-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-nav .button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
 }
