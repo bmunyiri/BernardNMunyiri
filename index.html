@@ -377,5 +377,16 @@
     }
   }
 </script>
+  <script>
+  function toggleCaseStudy(button) {
+    const contentBlock = button.closest('.content');
+    const caseStudyDiv = contentBlock.querySelector('.case-study');
+
+    if (caseStudyDiv) {
+      caseStudyDiv.classList.toggle('is-open');
+      button.innerText = caseStudyDiv.classList.contains('is-open') ? "Hide Case Study" : "Case Study";
+    }
+  }
+</script>
 </body>
 </html>
