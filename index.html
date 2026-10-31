@@ -354,15 +354,17 @@
   </script>
   <script>
   function toggleCaseStudy(button) {
-    // Find the .actions container, then find the .case-study div immediately after it
-    const actionsList = button.closest('.actions');
-    const caseStudyDiv = actionsList.nextElementSibling;
+    // 1. Find the main content block for this specific project
+    const contentBlock = button.closest('.content');
+    
+    // 2. Find the case study div inside this project
+    const caseStudyDiv = contentBlock.querySelector('.case-study');
 
-    if (caseStudyDiv && caseStudyDiv.classList.contains('case-study')) {
-      // Toggle the 'is-open' class
+    if (caseStudyDiv) {
+      // 3. Toggle the 'is-open' class
       caseStudyDiv.classList.toggle('is-open');
       
-      // Change the button text
+      // 4. Change the button text
       if (caseStudyDiv.classList.contains('is-open')) {
         button.innerText = "Hide Case Study";
       } else {
