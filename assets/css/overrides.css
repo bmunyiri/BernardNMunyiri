@@ -21,7 +21,7 @@
 
 /* ---------- Section heading (Websites / Skills) ---------- */
 .section-heading {
-  padding: 3rem 1.5rem 0.5rem;   /* was 4rem 2rem 1.5rem */
+  padding: 3rem 1.5rem 0.5rem;
   max-width: 680px;
   margin: 0 auto;
 }
@@ -73,7 +73,7 @@
 
 /* Trim the template's built-in 4em padding on .content inside spotlights */
 .spotlight.style1 > .content {
-  padding: 1.5rem 0;   /* was ~4em */
+  padding: 1.5rem 0;
 }
 
 /* ---------- Skills grid ---------- */
@@ -88,7 +88,7 @@
   margin-top: 2rem;
 }
 #skills .items > section {
-  padding: 1.75rem 1.25rem;   /* was ~2.5em */
+  padding: 1.75rem 1.25rem;
 }
 #skills .items > section h3 {
   margin: 0.9rem 0 0.5rem;
@@ -109,37 +109,8 @@
 }
 
 /* =========================================================
-   RESPONSIVE — collapse gaps on small screens
+   TECH + ROLE TAGS (GLOBAL)
    ========================================================= */
-@media (max-width: 980px) {
-  :root {
-    --section-gap: 2rem;
-    --spotlight-pad-y: 2.25rem;
-    --spotlight-pad-x: 1.5rem;
-  }
-  .spotlight {
-    gap: 1.5rem;
-  }
-  .spotlight.style1 > .content {
-    padding: 0.5rem 0 1rem;
-  }
-}
-
-@media (max-width: 736px) {
-  : root {
-    --section-gap: 1.5rem;
-    --spotlight-pad-y: 1.75rem;
-  }
-  .section-heading {
-    padding: 2.25rem 1.25rem 0.25rem;
-  }
-  .spotlight.style1 > .content {
-    padding: 0 0 1.25rem;
-  }
-  #skills .items > section {
-    padding: 1.25rem 1rem;
-  }
-   /* ===== Tech + Role tags ===== */
 .meta {
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -158,12 +129,15 @@
   color: #555;
   white-space: nowrap;
 }
- /* ===== Header & Intro ===== */
+
+/* =========================================================
+   HEADER & INTRO (GLOBAL)
+   ========================================================= */
 .page-header {
-  background: #f8f8fb; /* Light, clean background instead of dark */
+  background: #f8f8fb;
   color: #1f1f2e;
   padding: 4rem 1.5rem 3rem;
-  text-align: center; /* Forces everything inside to center */
+  text-align: center;
   border-bottom: 1px solid #e8e8ef;
 }
 
@@ -177,7 +151,7 @@
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-size: 0.75rem;
-  color: #4c8bf5; /* A nice pop of color for the job title */
+  color: #4c8bf5;
   font-weight: 600;
   margin: 0 0 1rem;
 }
@@ -192,7 +166,7 @@
 /* ===== The Intro Paragraph ===== */
 .intro {
   max-width: 680px;
-  margin: 0 auto 2.5rem; /* Centers the block and gives space below */
+  margin: 0 auto 2.5rem;
   font-size: 1.05rem;
   line-height: 1.7;
   color: #444;
@@ -210,7 +184,6 @@
   flex-wrap: wrap;
 }
 
-/* Remove the sticky dark bar effect from before */
 .header-nav.sticky-nav {
   position: static;
   background: transparent;
@@ -218,8 +191,39 @@
   padding: 0;
 }
 
-/* Ensure mobile still looks good */
+/* =========================================================
+   RESPONSIVE — collapse gaps on small screens
+   ========================================================= */
+@media (max-width: 980px) {
+  :root {
+    --section-gap: 2rem;
+    --spotlight-pad-y: 2.25rem;
+    --spotlight-pad-x: 1.5rem;
+  }
+  .spotlight {
+    gap: 1.5rem;
+  }
+  .spotlight.style1 > .content {
+    padding: 0.5rem 0 1rem;
+  }
+}
+
 @media (max-width: 736px) {
+  :root {
+    --section-gap: 1.5rem;
+    --spotlight-pad-y: 1.75rem;
+  }
+  .section-heading {
+    padding: 2.25rem 1.25rem 0.25rem;
+  }
+  .spotlight.style1 > .content {
+    padding: 0 0 1.25rem;
+  }
+  #skills .items > section {
+    padding: 1.25rem 1rem;
+  }
+  
+  /* Mobile Header Adjustments (Now properly nested) */
   .page-header {
     padding: 3rem 1.25rem 2rem;
   }
@@ -234,5 +238,4 @@
     width: 100%;
     max-width: 280px;
   }
-}
 }
