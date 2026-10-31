@@ -31,11 +31,14 @@
 
 /* ---------- Spotlight sections ---------- */
 .spotlight {
-  padding: var(--spotlight-pad-y) var(--spotlight-pad-x);
-  align-items: center;   /* was stretch — this is the big win */
-  gap: 2rem;
+  background: #fff;
+  border: 1px solid #e8e8ef;
+  border-radius: 10px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
 }
-
 /* Cap text column width so lines don't run too long */
 .spotlight > .content {
   max-width: var(--content-max);
@@ -65,10 +68,7 @@
   justify-content: center;
 }
 .spotlight > .image img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: none;
 }
 
 /* Trim the template's built-in 4em padding on .content inside spotlights */
