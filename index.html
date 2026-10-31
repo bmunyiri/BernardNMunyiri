@@ -377,14 +377,24 @@
     }
   }
 </script>
-  <script>
+<script>
   function toggleCaseStudy(button) {
+    // 1. Find the main content block for this specific project
     const contentBlock = button.closest('.content');
+    
+    // 2. Find the case study div inside this project
     const caseStudyDiv = contentBlock.querySelector('.case-study');
 
     if (caseStudyDiv) {
+      // 3. Toggle the 'is-open' class
       caseStudyDiv.classList.toggle('is-open');
-      button.innerText = caseStudyDiv.classList.contains('is-open') ? "Hide Case Study" : "Case Study";
+      
+      // 4. Change the button text
+      if (caseStudyDiv.classList.contains('is-open')) {
+        button.innerText = "Hide Case Study";
+      } else {
+        button.innerText = "Case Study";
+      }
     }
   }
 </script>
