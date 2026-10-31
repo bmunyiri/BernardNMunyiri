@@ -183,28 +183,43 @@
   color: #444 !important;
   display: block; /* Ensures block-level centering */
 }
-
 /* ===== Navigation Buttons ===== */
+/* 1. Kill the dark ribbon background completely */
+.page-header nav,
 .page-header .header-nav {
-  background: transparent !important; /* Kills the dark ribbon */
+  background: transparent !important;
+  background-color: transparent !important;
   box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
   display: flex !important;
   justify-content: center !important;
   gap: 1rem;
   flex-wrap: wrap;
-  padding: 0 !important;
-  margin: 0 !important;
 }
 
-/* Style the buttons so they look clean on the light background */
+/* 2. Restyle the buttons to be light and clean */
 .page-header .header-nav .button {
-  background: #fff !important;
-  border: 1px solid #ccc !important;
+  background: #ffffff !important;
   color: #1f1f2e !important;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+  border: 1px solid #d0d0d5 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04) !important;
+  padding: 0 1.5rem !important;
+  height: 2.5rem !important;
+  line-height: 2.5rem !important;
+  font-size: 0.8rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 600 !important;
+  transition: all 0.2s ease;
 }
 
+/* 3. Add a nice hover effect */
 .page-header .header-nav .button:hover {
+  background: #f0f4ff !important;
   border-color: #4c8bf5 !important;
   color: #4c8bf5 !important;
+  box-shadow: 0 4px 8px rgba(76, 139, 245, 0.15) !important;
 }
