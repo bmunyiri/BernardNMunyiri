@@ -107,7 +107,6 @@
 #contact {
   padding: 3rem 1.5rem 2.5rem;
 }
-
 /* =========================================================
    TECH + ROLE TAGS (GLOBAL)
    ========================================================= */
@@ -116,153 +115,43 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #888;
-  margin: 0 0 1rem;
-  line-height: 1.8;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
 }
 .meta .tag {
   display: inline-block;
   background: #f2f2f7;
   border-radius: 999px;
-  padding: 0.2em 0.7em;
-  margin: 0 0.35em 0.35em 0;
+  padding: 0.3em 0.8em;
   font-weight: 600;
   color: #555;
-  white-space: nowrap;
 }
+.meta .role {
+  margin-left: 0.5rem;
+  color: #aaa;
+}
+
 /* =========================================================
-   HEADER & INTRO (BULLETPROOF OVERRIDES)
+   BUTTONS & ACTIONS
    ========================================================= */
-.page-header {
-  background: #f8f8fb !important;
-  color: #1f1f2e !important;
-  padding: 5rem 1.5rem 4rem !important; /* Gives the top some breathing room */
-  border-bottom: 1px solid #e8e8ef;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Forces all child elements to center */
-}
-
-/* Force ALL text inside the header to be centered */
-.page-header h1,
-.page-header p,
-.page-header .intro,
-.page-header .eyebrow {
-  text-align: center !important;
-}
-
-.page-header h1 {
-  font-size: 3rem !important;
-  margin: 0 0 0.5rem !important;
-  font-weight: 700 !important; /* Makes the name bolder and more visible */
-  color: #1f1f2e !important;
-}
-
-.page-header .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  font-size: 0.8rem !important;
-  color: #4c8bf5 !important; /* Blue accent color */
-  font-weight: 700 !important;
-  margin: 0 0 1rem !important;
-}
-
-.page-header .subtitle {
-  font-size: 1.15rem !important;
-  color: #555 !important;
-  max-width: 600px;
-  margin: 0 auto 2rem !important;
-  line-height: 1.6;
-}
-
-/* ===== The Intro Paragraph ===== */
-.page-header .intro {
-  max-width: 680px;
-  margin: 0 auto 2.5rem !important;
-  font-size: 1.05rem !important;
-  line-height: 1.8 !important;
-  color: #444 !important;
-  display: block; /* Ensures block-level centering */
-}
-/* ===== Navigation Buttons ===== */
-/* 1. Kill the dark ribbon background completely */
-.page-header nav,
-.page-header .header-nav {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+/* Force buttons side-by-side */
+.spotlight .actions {
   display: flex !important;
-  justify-content: center !important;
+  flex-wrap: wrap;
   gap: 1rem;
-  flex-wrap: wrap;
+  margin: 1.5rem 0 0 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+.spotlight .actions li {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* 2. Restyle the buttons to be light and clean */
-.page-header .header-nav .button {
-  background: #ffffff !important;
-  color: #1f1f2e !important;
-  border: 1px solid #d0d0d5 !important;
-  border-radius: 4px !important;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04) !important;
-  padding: 0 1.5rem !important;
-  height: 2.5rem !important;
-  line-height: 2.5rem !important;
-  font-size: 0.8rem !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
-  font-weight: 600 !important;
-  transition: all 0.2s ease;
-}
-
-/* 3. Add a nice hover effect */
-.page-header .header-nav .button:hover {
-  background: #f0f4ff !important;
-  border-color: #4c8bf5 !important;
-  color: #4c8bf5 !important;
-  box-shadow: 0 4px 8px rgba(76, 139, 245, 0.15) !important;
-}
-/* ===== Case Study Accordion ===== */
-.case-study {
-  display: none !important; /* Force hidden by default */
-  margin-top: 1.5rem;
-  padding: 1.25rem;
-  background: #f8f8fb;
-  border-left: 3px solid #4c8bf5;
-  border-radius: 0 6px 6px 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #444;
-}
-
-/* When the JS adds the 'is-open' class, show it */
-.case-study.is-open {
-  display: block !important; /* Force visible when open */
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.case-study p {
-  margin: 0 0 0.75rem 0;
-}
-.case-study p:last-child {
-  margin-bottom: 0;
-}
-
-/* Make the actions sit nicely side-by-side */
-.spotlight .actions.stacked {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: center;
-}
-
-/* Optional: A secondary, outlined button style */
+/* Style the alt button */
 .button.alt {
   background: transparent !important;
   box-shadow: inset 0 0 0 2px #d0d0d5 !important;
@@ -271,4 +160,28 @@
 .button.alt:hover {
   box-shadow: inset 0 0 0 2px #4c8bf5 !important;
   color: #4c8bf5 !important;
+}
+
+/* =========================================================
+   CASE STUDY ACCORDION
+   ========================================================= */
+.case-study {
+  display: none !important; /* Hidden by default */
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background: #f8f8fb;
+  border-left: 3px solid #4c8bf5;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+.case-study.is-open {
+  display: block !important; /* Shown when JS adds class */
+}
+.case-study p {
+  margin: 0 0 0.75rem 0;
+}
+.case-study p:last-child {
+  margin-bottom: 0;
 }
