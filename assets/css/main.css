@@ -8613,3 +8613,19 @@ input, select, textarea {
 			#wrapper.divided > .invert:first-child {
 				box-shadow: none !important;
 			}
+.meta {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin: 0 0 1rem;
+}
+.tag {
+  display: inline-block;
+  background: #f2f2f7;
+  border-radius: 999px;
+  padding: 0.15em 0.6em;
+  margin-right: 0.35em;
+  font-weight: 600;
+  color: #555;
+}
