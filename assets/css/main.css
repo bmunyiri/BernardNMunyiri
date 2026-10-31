@@ -8641,3 +8641,9 @@ input, select, textarea {
   padding: 0.75rem 1rem;
   border-radius: 0 0 8px 8px;
 }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
