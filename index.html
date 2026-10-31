@@ -433,6 +433,17 @@
     }
   }
 </script>
-  
+  <script>
+  // Auto-update the "Last updated" badge to the current month and year
+  document.addEventListener('DOMContentLoaded', function() {
+    const dateElement = document.getElementById('last-updated');
+    if (dateElement) {
+      const now = new Date();
+      // This formats it as "October 2026"
+      const options = { month: 'long', year: 'numeric' };
+      dateElement.textContent = now.toLocaleDateString('en-US', options);
+    }
+  });
+</script>
 </body>
 </html>
