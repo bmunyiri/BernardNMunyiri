@@ -8646,4 +8646,12 @@ input, select, textarea {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+	.intro {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+}
 }
