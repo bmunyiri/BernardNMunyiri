@@ -8656,4 +8656,5 @@ input, select, textarea {
   color: #444;
   background: transparent;   /* kill any inherited ribbon */
 }
+	.intro, .intro * { background: transparent !important; }
 }
