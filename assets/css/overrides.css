@@ -139,4 +139,23 @@
   #skills .items > section {
     padding: 1.25rem 1rem;
   }
+   /* ===== Tech + Role tags ===== */
+.meta {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #888;
+  margin: 0 0 1rem;
+  line-height: 1.8;
+}
+.meta .tag {
+  display: inline-block;
+  background: #f2f2f7;
+  border-radius: 999px;
+  padding: 0.2em 0.7em;
+  margin: 0 0.35em 0.35em 0;
+  font-weight: 600;
+  color: #555;
+  white-space: nowrap;
+}
 }
