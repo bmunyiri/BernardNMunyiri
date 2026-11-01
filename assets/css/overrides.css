@@ -77,35 +77,95 @@
 }
 
 /* ---------- Skills grid ---------- */
-#skills {
-  padding: 3rem 1.5rem 1rem;
-}
-#skills .inner {
+/* =========================================================
+   SKILLS SECTION (MODERN CATEGORIES)
+   ========================================================= */
+.skills-container {
   max-width: 1100px;
   margin: 0 auto;
 }
-#skills .items {
-  margin-top: 2rem;
-}
-#skills .items > section {
-  padding: 1.75rem 1.25rem;
-}
-#skills .items > section h3 {
-  margin: 0.9rem 0 0.5rem;
-  font-size: 1.1rem;
-}
-#skills .items > section p {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.55;
-}
-#skills .items > section .cert {
-  margin-top: 0.9rem;
+
+.skill-category {
+  margin-bottom: 3.5rem;
 }
 
-/* ---------- Footer ---------- */
-#contact {
-  padding: 3rem 1.5rem 2.5rem;
+/* Category Headers */
+.category-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f1f2e;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #e8e8ef;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* The Grid that holds the cards */
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* The Cards */
+.skill-card {
+  background: #fff;
+  border: 1px solid #e8e8ef;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  border-color: #d0d0d5;
+}
+
+/* Icons inside the cards */
+.skill-card .icon {
+  font-size: 2rem;
+  color: #4c8bf5;
+  margin-bottom: 1.25rem;
+}
+
+.skill-card h3 {
+  font-size: 1.1rem;
+  color: #1f1f2e;
+  margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Push the certification links to the bottom */
+.skill-card .cert {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f5;
+}
+
+.skill-card .cert a {
+  font-weight: 600;
+  color: #4c8bf5;
+  text-decoration: none;
+}
+
+.skill-card .cert a:hover {
+  text-decoration: underline;
+}
+
+.skill-card .cert b {
+  color: #888;
+  font-size: 0.85rem;
+  font-weight: 500;
 }
 /* =========================================================
    TECH + ROLE TAGS (GLOBAL)
