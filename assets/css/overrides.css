@@ -301,3 +301,10 @@
   object-fit: cover;
   object-position: top center;
 }
+.spotlight > .image {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.spotlight > .image:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
