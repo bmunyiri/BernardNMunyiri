@@ -418,3 +418,49 @@ html {
     padding: 1.25rem;
   }
 }
+
+/* =========================================================
+   SKILLS EXTRA (TAGS)
+   ========================================================= */
+.skills-extra {
+  text-align: center;
+  margin-top: 3.5rem;
+  padding: 2rem;
+  background: #fff;
+  border: 1px dashed #d0d0d5;
+  border-radius: 10px;
+}
+
+.skills-extra h3 {
+  font-size: 1.1rem;
+  color: #1f1f2e;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.extra-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.extra-tags .tag {
+  display: inline-block;
+  background: #f8f8fb;
+  border: 1px solid #e8e8ef;
+  border-radius: 999px;
+  padding: 0.4em 1em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  transition: all 0.2s ease;
+}
+
+.extra-tags .tag:hover {
+  background: #f0f4ff;
+  border-color: #4c8bf5;
+  color: #4c8bf5;
+}
