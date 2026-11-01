@@ -140,7 +140,19 @@ html {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
-  padding: 2rem;
+  padding: 2.5rem; /* Slightly increased padding for a better frame */
+  display: flex;   /* Force flex layout */
+  gap: 4rem;       /* <--- THIS ADDS THE SPACE BETWEEN TEXT AND IMAGE */
+  align-items: center; /* Vertically centers the text and image */
+}
+
+/* Mobile adjustment so they stack cleanly */
+@media (max-width: 850px) {
+  .spotlight {
+    flex-direction: column-reverse; /* Image on top, text below */
+    gap: 1.5rem; /* Smaller gap on mobile */
+    padding: 1.5rem;
+  }
 }
 
 .spotlight > .content {
