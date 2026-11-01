@@ -279,22 +279,14 @@
    STATUS UPDATE BADGE
    ========================================================= */
 .status-update {
-  display: inline-block;
+  display: table !important; /* Forces the badge to shrink-wrap its text */
+  margin: 1rem auto 1.5rem !important; /* 'auto' on left/right perfectly centers it */
   font-size: 0.85rem !important;
   font-weight: 600 !important;
-  color: #2e7d32 !important; /* Dark green text */
-  background-color: #e8f5e9 !important; /* Light green background */
-  padding: 0.4rem 1rem !important;
+  color: #2e7d32 !important; 
+  background-color: #e8f5e9 !important; 
+  padding: 0.4rem 1.25rem !important;
   border-radius: 999px !important;
-  margin: 0.5rem auto 1.5rem !important;
   letter-spacing: 0.02em !important;
-  text-align: center;
-}
-
-/* Dark mode support (if you ever add it) */
-@media (prefers-color-scheme: dark) {
-  .status-update {
-    background-color: #1b5e20 !important;
-    color: #a5d6a7 !important;
-  }
+  text-align: center !important;
 }
