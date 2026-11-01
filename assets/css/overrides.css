@@ -370,3 +370,36 @@
 html {
   scroll-behavior: smooth;
 }
+/* The Grid */
+.skill-grid {
+  display: grid;
+  /* Use auto-fit + max 280px so cards don't stretch too wide */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
+  justify-content: center; /* Centers the grid tracks on desktop */
+  gap: 1.5rem; 
+}
+
+/* Make text darker for better contrast */
+.skill-card p {
+  font-size: 0.85rem;
+  color: #444; /* Darker gray (was #666) */
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Darker org name */
+.skill-card .cert b {
+  color: #555; /* Darker (was #888) */
+  font-weight: 600;
+}
+
+/* Back to top button styling */
+.back-to-top-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.back-to-top {
+  border-radius: 999px !important; /* Makes it a pill shape */
+  padding: 0.6rem 1.5rem !important;
+}
