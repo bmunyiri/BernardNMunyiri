@@ -294,17 +294,39 @@ html {
   border-color: #d0d0d5;
 }
 
+/* =========================================================
+   SKILLS SECTION ICONS (SVG)
+   ========================================================= */
 .skill-card .icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 56px;  /* Slightly larger circle to frame the SVG */
+  height: 56px;
   border-radius: 50%;
-  background: #f0f4ff; 
-  color: #4c8bf5;      
-  font-size: 1.25rem;
+  background: #f0f4ff; /* Soft blue background */
+  color: #4c8bf5;      /* Primary blue SVG stroke */
   margin-bottom: 1.25rem;
+}
+
+/* Make the SVG perfectly sized inside the circle */
+.skill-card .icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Style the new SVG icon inside the category titles */
+.category-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between icon and text */
+}
+
+.title-icon {
+  width: 24px;
+  height: 24px;
+  color: #4c8bf5;
 }
 
 .skill-card h3 {
