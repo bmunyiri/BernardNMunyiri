@@ -477,6 +477,7 @@ html {
   border-color: #4c8bf5;
   color: #4c8bf5;
 }
+
 /* =========================================================
    FAQ ACCORDION SECTION
    ========================================================= */
@@ -485,10 +486,8 @@ html {
   color: #1e293b;
   line-height: 1.6;
   padding: 4rem 1rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100% !important;
+  display: block !important; /* Changed from flex to block to prevent shrinking */
   border-top: 1px solid #e8e8ef;
 }
 
@@ -497,9 +496,9 @@ html {
 }
 
 .faq-section .faq-container {
-  max-width: 820px;
-  width: 100%;
-  margin: 0 auto;
+  max-width: 820px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
 }
 
 .faq-section .faq-header {
@@ -524,9 +523,10 @@ html {
 }
 
 .faq-section .accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem !important;
+  width: 100% !important;
 }
 
 .faq-section .accordion-item {
@@ -536,6 +536,8 @@ html {
   border: 1px solid #e2e8f0;
   overflow: hidden;
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  width: 100% !important; /* Forces card to full width */
+  max-width: 100% !important;
 }
 
 .faq-section .accordion-item:hover {
@@ -548,9 +550,9 @@ html {
   box-shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
 
-/* Using flex with !important to override any global theme button styles */
 .faq-section .accordion-trigger {
   width: 100% !important;
+  box-sizing: border-box !important;
   background: transparent !important;
   padding: 1.25rem 1.5rem !important;
   display: flex !important;
@@ -565,7 +567,6 @@ html {
   height: auto !important;
   text-align: left;
   
-  /* Override theme button text styles */
   font-family: inherit !important;
   font-size: 1.05rem !important;
   font-weight: 600 !important;
@@ -584,14 +585,14 @@ html {
   outline-offset: -2px;
 }
 
-/* Ensures text wraps properly and takes up all available space */
+/* Ensures text takes up all available space, pushing the icon to the right */
 .faq-section .faq-trigger-text {
-  flex: 1;
-  min-width: 0;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
   white-space: normal !important;
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
-  display: block;
+  display: block !important;
 }
 
 .faq-section .faq-icon {
@@ -627,7 +628,7 @@ html {
 }
 
 .faq-section .accordion-item.active .accordion-panel {
-  max-height: 2000px; /* Increased to accommodate long lists */
+  max-height: 2000px;
   padding: 0 1.5rem 1.25rem;
 }
 
