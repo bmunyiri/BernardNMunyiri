@@ -639,7 +639,6 @@
       <p class="credit">&copy; <span id="year"></span> Bernard Njiru Munyiri — Designed by <a href="https://sites.google.com/view/kenya-web-professionals/" target="_blank" rel="noopener">Kenya Web Professionals</a></p>
     </div>
   </footer>
-
   <!-- Scripts -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.scrollex.min.js"></script>
@@ -650,26 +649,15 @@
   <script src="assets/js/main.js"></script>
   
   <script>
-    // Auto-update copyright year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Toggle Case Study Accordion
-    function toggleCaseStudy(button) {
-      const contentBlock = button.closest('.content');
-      const caseStudyDiv = contentBlock.querySelector('.case-study');
-
-      if (caseStudyDiv) {
-        caseStudyDiv.classList.toggle('is-open');
-        if (caseStudyDiv.classList.contains('is-open')) {
-          button.innerText = "Hide Case Study";
-        } else {
-          button.innerText = "Case Study";
-        }
-      }
-    }
-
-    // Auto-update the "Last updated" badge
     document.addEventListener('DOMContentLoaded', function() {
+      
+      // 1. Auto-update copyright year
+      const yearElement = document.getElementById('year');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
+
+      // 2. Auto-update the "Last updated" badge
       const dateElement = document.getElementById('last-updated');
       if (dateElement) {
         const now = new Date();
@@ -677,32 +665,49 @@
         dateElement.textContent = now.toLocaleDateString('en-US', options);
       }
 
-       // ===== FAQ ACCORDION SCRIPT =====
+      // 3. Toggle Case Study Accordion (for portfolio items)
+      window.toggleCaseStudy = function(button) {
+        const contentBlock = button.closest('.content');
+        const caseStudyDiv = contentBlock.querySelector('.case-study');
+
+        if (caseStudyDiv) {
+          caseStudyDiv.classList.toggle('is-open');
+          if (caseStudyDiv.classList.contains('is-open')) {
+            button.innerText = "Hide Case Study";
+          } else {
+            button.innerText = "Case Study";
+          }
+        }
+      }
+
+      // 4. FAQ ACCORDION SCRIPT
       const faqSection = document.querySelector('.faq-section');
       if (faqSection) {
         const items = faqSection.querySelectorAll('.accordion-item');
+        
         items.forEach(item => {
           const trigger = item.querySelector('.accordion-trigger');
           
           const toggleAccordion = function() {
             const isActive = item.classList.contains('active');
             
-            // Close all items
+            // Close all other items
             items.forEach(i => {
               i.classList.remove('active');
               i.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
             });
             
-            // Open the clicked one if it wasn't active
+            // Open the clicked item if it wasn't already open
             if (!isActive) {
               item.classList.add('active');
               trigger.setAttribute('aria-expanded', 'true');
             }
           };
 
+          // Listen for clicks
           trigger.addEventListener('click', toggleAccordion);
           
-          // Keyboard accessibility for 'Enter' and 'Space'
+          // Listen for keyboard 'Enter' or 'Space' for accessibility
           trigger.addEventListener('keydown', function(e) {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
@@ -711,5 +716,8 @@
           });
         });
       }
+
+    });
+  </script>
 </body>
 </html>
