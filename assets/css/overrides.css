@@ -548,29 +548,29 @@ html {
   box-shadow: 0 4px 16px rgba(0,0,0,0.06);
 }
 
-/* The fix for truncated text: resetting button styles and allowing flex-wrap */
+/* Using flex with !important to override any global theme button styles */
 .faq-section .accordion-trigger {
-  width: 100%;
-  background: none !important;
+  width: 100% !important;
+  background: transparent !important;
+  padding: 1.25rem 1.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  cursor: pointer;
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  padding: 1.25rem 1.5rem !important;
-  font-family: inherit;
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #1f1f2e;
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  line-height: 1.4;
-  transition: background 0.15s ease;
   margin: 0 !important;
   height: auto !important;
-  min-height: auto !important;
+  text-align: left;
+  
+  /* Override theme button text styles */
+  font-family: inherit !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: #1f1f2e !important;
+  line-height: 1.4 !important;
   text-transform: none !important;
   letter-spacing: normal !important;
 }
@@ -584,13 +584,14 @@ html {
   outline-offset: -2px;
 }
 
-/* Ensures text takes available space and wraps properly */
+/* Ensures text wraps properly and takes up all available space */
 .faq-section .faq-trigger-text {
   flex: 1;
   min-width: 0;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  white-space: normal;
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  display: block;
 }
 
 .faq-section .faq-icon {
@@ -626,7 +627,7 @@ html {
 }
 
 .faq-section .accordion-item.active .accordion-panel {
-  max-height: 800px;
+  max-height: 2000px; /* Increased to accommodate long lists */
   padding: 0 1.5rem 1.25rem;
 }
 
@@ -676,7 +677,7 @@ html {
   .faq-section { padding: 2.5rem 0.75rem; }
   .faq-section .faq-header h2 { font-size: 1.5rem; }
   .faq-section .faq-header p { font-size: 0.95rem; }
-  .faq-section .accordion-trigger { padding: 1rem 1.15rem !important; font-size: 0.98rem; }
+  .faq-section .accordion-trigger { padding: 1rem 1.15rem !important; font-size: 0.98rem !important; }
   .faq-section .accordion-panel { padding: 0 1.15rem; }
   .faq-section .accordion-item.active .accordion-panel { padding: 0 1.15rem 1rem; }
   .faq-section .accordion-panel ul { grid-template-columns: 1fr; }
