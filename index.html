@@ -639,17 +639,9 @@
       <p class="credit">&copy; <span id="year"></span> Bernard Njiru Munyiri — Designed by <a href="https://sites.google.com/view/kenya-web-professionals/" target="_blank" rel="noopener">Kenya Web Professionals</a></p>
     </div>
   </footer>
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
-  
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    <script>
+    // Wait for jQuery to load and DOM to be ready
+    jQuery(document).ready(function($) {
       
       // 1. Auto-update copyright year
       const yearElement = document.getElementById('year');
@@ -680,42 +672,33 @@
         }
       }
 
-      // 4. FAQ ACCORDION SCRIPT
-      const faqSection = document.querySelector('.faq-section');
-      if (faqSection) {
-        const items = faqSection.querySelectorAll('.accordion-item');
+      // 4. FAQ ACCORDION SCRIPT (Using jQuery for maximum reliability)
+      // We attach it to the document so it works regardless of when the DOM renders
+      $(document).on('click', '.faq-section .accordion-trigger', function(e) {
+        e.preventDefault();
+        e.stopPropagation(); // Prevents the theme's scripts from hijacking the click
         
-        items.forEach(item => {
-          const trigger = item.querySelector('.accordion-trigger');
-          
-          const toggleAccordion = function() {
-            const isActive = item.classList.contains('active');
-            
-            // Close all other items
-            items.forEach(i => {
-              i.classList.remove('active');
-              i.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
-            });
-            
-            // Open the clicked item if it wasn't already open
-            if (!isActive) {
-              item.classList.add('active');
-              trigger.setAttribute('aria-expanded', 'true');
-            }
-          };
+        var $this = $(this);
+        var $item = $this.closest('.accordion-item');
+        var isActive = $item.hasClass('active');
+        
+        // Close all other items
+        $item.closest('.accordion').find('.accordion-item').removeClass('active').find('.accordion-trigger').attr('aria-expanded', 'false');
+        
+        // Open the clicked item if it wasn't active
+        if (!isActive) {
+          $item.addClass('active');
+          $this.attr('aria-expanded', 'true');
+        }
+      });
 
-          // Listen for clicks
-          trigger.addEventListener('click', toggleAccordion);
-          
-          // Listen for keyboard 'Enter' or 'Space' for accessibility
-          trigger.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              toggleAccordion();
-            }
-          });
-        });
-      }
+      // Keyboard accessibility (Enter/Space)
+      $(document).on('keydown', '.faq-section .accordion-trigger', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          $(this).trigger('click');
+        }
+      });
 
     });
   </script>
