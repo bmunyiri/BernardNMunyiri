@@ -438,6 +438,15 @@
 <title>Website Design Kenya — FAQ Accordion</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  /* Fix: Ensure trigger doesn't shrink, text wraps properly */
+  .accordion-trigger span:first-child {
+    flex: 1;
+    min-width: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
   body {
     font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background: #f8fafc;
@@ -564,6 +573,32 @@
     color: #1e293b;
     font-weight: 600;
   }
+  .accordion-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem 1.5rem;
+  }
+  .accordion-panel ul li {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .accordion-panel ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #16a34a;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  @media (max-width: 560px) {
+    .accordion-panel ul { grid-template-columns: 1fr; }
+  }
   .footer-note {
     text-align: center;
     margin-top: 2.5rem;
@@ -588,6 +623,51 @@
   </div>
 
   <div class="accordion" id="faqAccordion">
+
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span>What do I need to give the design team before they start?</span>
+        <span class="icon">
+          <svg viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="accordion-panel" role="region">
+        <p><strong>Everything below, in one folder, before the kickoff call.</strong> Missing items are the number one cause of project delays — not the design work itself.</p>
+        <ul>
+          <li>Business name &amp; tagline</li>
+          <li>Logo files (PNG, SVG, AI/PDF)</li>
+          <li>Brand colors &amp; fonts (if defined)</li>
+          <li>High-res product/service photos</li>
+          <li>Written text for every page</li>
+          <li>Contact details (phone, email, WhatsApp)</li>
+          <li>Physical address &amp; Google Maps pin</li>
+          <li>Social media links</li>
+          <li>List of services or products</li>
+          <li>Prices (if shown publicly)</li>
+          <li>About-us story &amp; team bios</li>
+          <li>Certifications, awards, partners</li>
+          <li>Domain name (or approval to buy one)</li>
+          <li>Hosting account or approval to set up</li>
+          <li>Existing site login (if any)</li>
+          <li>Google Analytics / Search Console access</li>
+          <li>Google Business Profile access</li>
+          <li>M-Pesa Paybill/Till number (if selling)</li>
+          <li>Sample sites you like (and why)</li>
+          <li>Sample sites you dislike (and why)</li>
+          <li>Target customer description</li>
+          <li>Main competitor sites</li>
+          <li>Key pages you want (e.g. Home, About, Contact)</li>
+          <li>Primary call-to-action (call, buy, book, sign up)</li>
+          <li>Any legal text (privacy policy, terms)</li>
+          <li>Single decision-maker for approvals</li>
+          <li>Your deadline &amp; launch date</li>
+          <li>Budget range, confirmed in writing</li>
+          <li>Preferred communication channel &amp; hours</li>
+          <li>Login details for any tools they'll need</li>
+        </ul>
+        <p>If you don't have some of these yet — like professional photos or written copy — tell the team upfront so they can quote for it or adjust the timeline.</p>
+      </div>
+    </div>
 
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
@@ -724,6 +804,27 @@
   <p class="footer-note">Built for Kenyan businesses. No jargon. Just answers.</p>
 </div>
 
+<script>
+  (function() {
+    const items = document.querySelectorAll('.accordion-item');
+    items.forEach(item => {
+      const trigger = item.querySelector('.accordion-trigger');
+      trigger.addEventListener('click', function() {
+        const isActive = item.classList.contains('active');
+        items.forEach(i => {
+          i.classList.remove('active');
+          i.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
 <script>
   (function() {
     const items = document.querySelectorAll('.accordion-item');
